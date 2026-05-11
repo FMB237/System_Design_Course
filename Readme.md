@@ -134,3 +134,84 @@ For this processing of Load Balancing we mainly have mainy methods like **Softwa
 Another example of a Load Balancer is **HA proxy** and also the **AWS Elastic Load Balancing,Azure Load Balancer and Google Cloud Load Balancer**
 
 # Single point of Failure
+
+Let us return to our system course design and go back to the concept of **SPOF** which means Single point of Failure which is been defined as any component which will cause the whole system to fails if it falls.So it is a critical issue in System designed.
+If we consider an architecture where our users pass by the load balancer before reaching the servers if the load balancer fails the whole systel is down but the load balancer generally have a monitoring system but **if the servers of the system is been linked to be single Database if that DB fails the whole system will fails** Which means here our DB is a our single point of Failure.
+Systems with single points of failure also facing problem with scalability and security issues like an attacker can send alot of traffic to the load balancer to saturate the system and brings it down.
+
+To avoid SPOF on load balancer we can used the following options : 
+1. Redundancy : 
+That is adding more load balancer  in other architecture so that if one balancer fails users will be redirected to another one until the connection is back 
+2. Health Check & Monitoring :
+This is the most common and simple wait to prevent our system to fails 
+3. Self-Healing System : 
+This is when a Load balancer falls and redirects the traffic to an instance of another load balancer which is mainly a copy that contains all the informations of that load balancer.
+
+
+# API Design 
+ This is a very important session in system design and the type of API used in a sytem depends mainly on what we have to build.
+
+**What is an API**
+API(Application Programming Interface) Simply defines how software components should interacts.
+API stands between the clients and the servers and it define what type of requests is  been made by the client to the server,how to make that requests and also what type of response should we except.
+Thats is mainly the role of an API in an our APP.Example 
+**Use user making a GET request except to get back data in return**.API also set up the services boundaries since it defines clear interfaces between system components.
+
+**Types of API**
+We mainly have 3 main types of API :
+**1. RESTAPI**
+**2. GRAGHQL**
+**3. gRPC** 
+
+They most commonly used API here  is the RESTAPI which uses resource base organise around resource using HTTP methods.
+The main advantage of RestAPI is that the are stateless that means each request contains all of the informations needed.
+RESTAPI also have Standardize methods that is we already know what method we gonna used of working with RESTAPI that is **GET,POST,PUT,DELETE,PATCH e.t.c** .RestAPI are mostly used in Web and Mobile Apps.
+
+
+**GRAPHQL**
+This is mainly a **Query language** which is has the main purpose of allowing the client to get the exact piece of information he/she want to get with precitions.
+There have single end-points that is one **End-point for an Operation**.Also the operation here can called **Query(reading data),mutations(wrting data),subcriptions** which are the equivalent of PUT,PATCH in RESTAPI.
+GRAPHQL is been used in **Complex UIs**
+
+
+**gRPC**
+This is the least commann type of API.It is a Protocol Buffers which means it can used **Binary serailization with schemas defintions**
+Here methods are been defined in a file called the **.proto files**.For the communications types we mainly uses **Client Streaming,Bidirectional Streaming etc** 
+It is a high performance API used in **Microservices**
+
+
+**REST vs GRAPHQL**
+RestApi always comes with resource base endpoints which can user  or an item.Need multiple request to get the related data.With HTTP methods the definitions for the oprations is quite simple.The response structure are fix,provide expicit versionning while GRAPHQL comes with a single endpoint for all it operations and also uses Query languages for operations,has a schemas evolution with versionning,Single request are done for preside data.
+
+
+**4 Key Design Principles**
+There 4 Principle of a Good API is that it should be : 
+**1. Consistency**
+  - Consistent naming 
+  - Consistent pattern
+**2. Simplicity**
+  - Focus on Core users
+  - Intitutive design
+**3. Secutity**
+  - Authentification
+  - Authorization
+  - Input Validation
+  - Rate liming
+**4. Performance**
+  - Caching Stability
+  - Pagination
+  - Reduce round tips 
+
+**Note : A Good API is an API That developpers can used without reading it documenation**
+
+Each of this API uses **API protocols** So the API protocols used mainly infleunce the architecture we will build for our apps.
+After all this we gonna move to the API design process and then move to Design Approches like **Top-down(From high standards to lower ones) method or Bottom-up(From Low standards to high ones) method**
+We will also see the Life_cycle of APIs.The big of a API dev is not coding but designing it.
+
+
+
+
+# API PROTOCOLS
+
+
+
