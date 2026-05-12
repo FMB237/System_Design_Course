@@ -218,8 +218,29 @@ The most common protocol of communication used is **HTTP(Hyperext Transfer proto
 
 **HTTPS** is like classic HTTP but we some TSL/SSL Encryption and HTTPS stands for **Hyperext Transfer protocol Security**.So this the simple usedof HTTP but adding so TSL/SSL security layers on it to encrypt our data.With it we gain dataencryption and data security compare to the classic http here we gain security.
 
-
 ![HTTPS](pictures/HTTPS.png)
 
 **WebSockets**
- 
+When Using HTTP Requests we need to return a specific informations and so in the case we make many requests from our server to our client we mainly waste resource and bandwidth and this is not good in real-time fast communication and thatwhere WebSocket comes in with the use of **WebSocket HandShake** which can acts and a fully continue connection between the client of the server so the are linked together so that the requests we will send in Real time whihc wmainly avoids latency for Real-time Communication.
+
+![WebSockets](pictures/WebSockets.png)
+
+**Note: With WebSockets the server can independly push data to the main client machine.So Websockets enables directional communications**
+
+**AMQP(Advance Messaging Query Protocol)**
+
+This is an advance Enterprise messaging protocol.This can mainly be when update from the images below
+
+![AMQP](pictures/AMQP.png)
+
+That is a producer make a message that is been stored inside the Queues and when the customers is free he can obtained or collect that piece of informations this process go only in a either **1:1 Relationship** or a **1:N Relationship** or even sometimes **Topics**
+
+**gRPC(Google Remote Proceduce Call)**
+This is a highly performance Protocol created by Google which uses the **HTTP/2** for making performance requests can data calls mainly used in Microservices and Real-time Services in modern app Today.
+This is also mostly commonly used between Servers to Servers.
+
+![gRPC](pictures/gRPC.png)
+
+That is mainly all about API protocols and their choose mainly depends on what we are building like if we only need an **E-commerce app good For HTTPS** for a **Real-time Chat app better used Websockets**
+
+# Transport Layer(UCP,TCP)
