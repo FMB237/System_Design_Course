@@ -140,15 +140,16 @@ If we consider an architecture where our users pass by the load balancer before 
 Systems with single points of failure also facing problem with scalability and security issues like an attacker can send alot of traffic to the load balancer to saturate the system and brings it down.
 
 To avoid SPOF on load balancer we can used the following options : 
+
 1. Redundancy : 
-That is adding more load balancer  in other architecture so that if one balancer fails users will be redirected to another one until the connection is back 
+   That is adding more load balancer  in other architecture so that if one balancer fails users will be redirected to another one until the connection is back 
 2. Health Check & Monitoring :
-This is the most common and simple wait to prevent our system to fails 
+   This is the most common and simple wait to prevent our system to fails 
 3. Self-Healing System : 
-This is when a Load balancer falls and redirects the traffic to an instance of another load balancer which is mainly a copy that contains all the informations of that load balancer.
+   This is when a Load balancer falls and redirects the traffic to an instance of another load balancer which is mainly a copy that contains all the informations of that load balancer.
 
+# API Design
 
-# API Design 
  This is a very important session in system design and the type of API used in a sytem depends mainly on what we have to build.
 
 **What is an API**
@@ -167,40 +168,37 @@ They most commonly used API here  is the RESTAPI which uses resource base organi
 The main advantage of RestAPI is that the are stateless that means each request contains all of the informations needed.
 RESTAPI also have Standardize methods that is we already know what method we gonna used of working with RESTAPI that is **GET,POST,PUT,DELETE,PATCH e.t.c** .RestAPI are mostly used in Web and Mobile Apps.
 
-
 **GRAPHQL**
 This is mainly a **Query language** which is has the main purpose of allowing the client to get the exact piece of information he/she want to get with precitions.
 There have single end-points that is one **End-point for an Operation**.Also the operation here can called **Query(reading data),mutations(wrting data),subcriptions** which are the equivalent of PUT,PATCH in RESTAPI.
 GRAPHQL is been used in **Complex UIs**
-
 
 **gRPC**
 This is the least commann type of API.It is a Protocol Buffers which means it can used **Binary serailization with schemas defintions**
 Here methods are been defined in a file called the **.proto files**.For the communications types we mainly uses **Client Streaming,Bidirectional Streaming etc** 
 It is a high performance API used in **Microservices**
 
-
 **REST vs GRAPHQL**
 RestApi always comes with resource base endpoints which can user  or an item.Need multiple request to get the related data.With HTTP methods the definitions for the oprations is quite simple.The response structure are fix,provide expicit versionning while GRAPHQL comes with a single endpoint for all it operations and also uses Query languages for operations,has a schemas evolution with versionning,Single request are done for preside data.
-
 
 **4 Key Design Principles**
 There 4 Principle of a Good API is that it should be : 
 **1. Consistency**
-  - Consistent naming 
-  - Consistent pattern
-**2. Simplicity**
-  - Focus on Core users
-  - Intitutive design
-**3. Secutity**
-  - Authentification
-  - Authorization
-  - Input Validation
-  - Rate liming
-**4. Performance**
-  - Caching Stability
-  - Pagination
-  - Reduce round tips 
+
+- Consistent naming 
+- Consistent pattern
+  **2. Simplicity**
+- Focus on Core users
+- Intitutive design
+  **3. Secutity**
+- Authentification
+- Authorization
+- Input Validation
+- Rate liming
+  **4. Performance**
+- Caching Stability
+- Pagination
+- Reduce round tips 
 
 **Note : A Good API is an API That developpers can used without reading it documenation**
 
@@ -208,10 +206,20 @@ Each of this API uses **API protocols** So the API protocols used mainly infleun
 After all this we gonna move to the API design process and then move to Design Approches like **Top-down(From high standards to lower ones) method or Bottom-up(From Low standards to high ones) method**
 We will also see the Life_cycle of APIs.The big of a API dev is not coding but designing it.
 
-
-
-
 # API PROTOCOLS
 
+The choice of the API protocol to used in our app architecture is a very crucial thing and aspect.Let stand by understanding the application layer of protocols in our network stack.
+![Application of network stack](pictures/Application_of_network_protocols.png)
+
+From the images above we can clearly see that we go back to some network foundamentals which is the **OSI MODEL** and our focus is mainly on the application layers where lies all this protocols like **HTTP/HTTPS,Websocket,gRPC** and others which communicate with other layers in the OSI Model.
+The most common protocol of communication used is **HTTP(Hyperext Transfer protocol)** which ensures direct communication between server and client we also have https which is just a secure http,HTTP is well documented with error response and code for each types of requests. HTTP also define the host on which the are the version of API and when handle authentification using tokens.After all this we get a response of our HTTP Request which always have a same Format. 
+
+![HTTP Requests](pictures/HTTP_Request.png)
+
+**HTTPS** is like classic HTTP but we some TSL/SSL Encryption and HTTPS stands for **Hyperext Transfer protocol Security**.So this the simple usedof HTTP but adding so TSL/SSL security layers on it to encrypt our data.With it we gain dataencryption and data security compare to the classic http here we gain security.
 
 
+![HTTPS](pictures/HTTPS.png)
+
+**WebSockets**
+ 
