@@ -244,3 +244,25 @@ This is also mostly commonly used between Servers to Servers.
 That is mainly all about API protocols and their choose mainly depends on what we are building like if we only need an **E-commerce app good For HTTPS** for a **Real-time Chat app better used Websockets**
 
 # Transport Layer(UCP,TCP)
+
+All this proctols are good but need to be handle from one source to another so this is where the TCP/UCP enters in scene in the handling of the communications between this layers.TCP and UDP are both transport layers protocols that is used for data transfers but that both have their methods of data transfers and sharing.Let start with TCP
+
+**TCP stands for transmission control protocol** which is more simple than UCP in the transport of data.It uses ordered packets and Guaranteed delivery and also have Error checking.Sometimes data are been communicated using **Connection-based(3-ways handshake)**
+
+**UDP(User Datagram Protocol)** Which is the second type of protocol been used here it is very fast but is also not guarented so it does not garanty that the packets will be transfer from the source to the destination like TCP does and i also has less Overhead.The is also no handshake with UDP.UDP can be consider as the gold tool protocol for Real-time connections like **Video Calls**
+
+
+This is the illustration
+![TCP&UCP](pictures/TCP&UDP.png)
+
+The next images will give us the clear between differcent TCP and UDP and we can clearly see that UDP is a faster but non-secure version of TCP.
+
+![TCPvsUCP](pictures/TCPvsUDP.png)
+
+From this we can clearly see that is the use of TCP can is for slower but more secure services like **Banks,Emails and Paiement Systems** while UDP is mainly used Systems like Video gamings,calls and streaming.
+
+
+
+# RESTful APIs
+
+
