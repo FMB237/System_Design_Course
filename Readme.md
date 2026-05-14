@@ -298,4 +298,41 @@ Let consider i want a item let say bag with a price of 1000 so we gonna used sor
 
 Filtering,Sorting and pagination comes with  some benefits like performance increase,Bandwidth save, and Also gives more flexibity to the frontend.
 
+Now let move on to the used of HTTP protocols,Previously we have seen that this methods mainly relies like **GET,POST,PATCH,DELETE** and more this can be seen in the image below.This methods are mainly sued for Crud opretions.As a dev theused  and role of each of this methods should be sure a simple think or aspect we need to know like :
+1. GET(Used to fecth data)
+2. POST(Used to create Data)
+3. PUT(Used to replcae Data)
+4. PATCH(Partial Data Replace)
+5. DELETE(Remove Data)
+
+![HTTP_Methods](pictures/HTTP_Methods.png)
+
+The next image will clearly explained the used of Status code when using RestAPIs which means each request response should carry a code the user to know what happen and so if the requests was succesful or not.Like code **200** means the operation is successful **201** means creation is succesful **204** means No content 
+
+Generally i have the most common errors like the **404(Not Found) and the 500 Internal Server ERROR which generally comes from the DB in Prods**.They are more request errors we gonna see and explain with this screenshot 
+
+
+![Status_Code](pictures/Status_Code.png)
+
+
+As can see the 300 series are mainly Redirections while the **400 Serries are mainly Client Errors**
+
+
+
+When Using Restful APIs the some best practices a users needs to respect to build a good APIs for everything one to understand.
+1. The used of Plusral nouns for api route naming
+2. APIS versoning 
+3. Ensure our APIS Support pagination,Filtering and Sorting 
+4. Also keep our URL hierachy constsistence and constans
+
+![RESTful_APIs_Good_Practices](pictures/Restful_API_Good_Pratices.png)
+
+
+
+From the above images we can clearly see how a good restful API should be designed or made up.
+
+
+# GRAPHQL
+
+
 
