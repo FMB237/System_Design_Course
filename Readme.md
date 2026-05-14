@@ -264,5 +264,38 @@ From this we can clearly see that is the use of TCP can is for slower but more s
 
 
 # RESTful APIs
+![RESTful_API_designed](pictures/RESTful_API_designed.png)
+
+Restful APIs are the more useful formed of API used in developpement today be dev and we gonna explained more on how the are been built.Here i'm mainly talking about this APIs architecture,how it used for error handling,it status code gestion and even it resources modeling.
+
+Let start by seeing the login behind the resource modeling in Resful APIs mainly with the simple business domain which functions with a **Product,Order and Review**.This simple Business Domain is been Transform into a fully Functional RestAPI as can we see on the image below :
+
+
+
+
+![Resources_modeling](pictures/Resources_modeling.png)
+
+From the image above we can clearly see that in the Rest Resources are been represented as nodes.When designing our API we need to define clear URL_Pattern that will either go fetch or create Data in particular and not extral one.
+That is the main reason we add filtering,sorting and pagination into our real world APIs.In other to return specific data.
+
+For Filtering we can refers to the following image when by a user deside to filter and Item by category.So looiking for a Book in stock.
+![Filtering_APIs](pictures/Filtering_APIs.png)
+
+
+All this methods follows the same pattern let it be sorting,pagination and filtering the are all company by a query parameters as we are seeing on the differcent images  and this query paramter always has a **?+method**
+
+![Soring_APIs](pictures/Sorting_APIs.png)
+
+
+
+Let consider i want a item let say bag with a price of 1000 so we gonna used sorting to search of that item base on it known price.**Note the sorting functionality is been set up to the backend and not the front since it is a request which aim is to return an a price so can have many items with that price.**
+
+**Pagination** is been used to handle page changes on our site or app it still used a query paramter.Paginatiion is been set up of with a limit to not display all the informations directly to the Frontend like moving only from page 1 to 3 and then from page 3 to 5 but not from 1 directly to 20 using paginations.In some cases pagination is not used as main attribute and replace by **Offset**
+
+
+![Paginations](pictures/Paginations.png)
+
+
+Filtering,Sorting and pagination comes with  some benefits like performance increase,Bandwidth save, and Also gives more flexibity to the frontend.
 
 
