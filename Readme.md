@@ -334,5 +334,30 @@ From the above images we can clearly see how a good restful API should be design
 
 # GRAPHQL
 
+Traditional RestfulAPIs either return too low or too much about of data when we do a request using it them.GraphQL solve this issue by giving client exactly what the need after doing their request so the have an exact Request response to their requests.So this Session is mainly base on the use and understanding of GRAPHQL in the world of modern softwares.GRAPHQL API was created by facebook in other to solve the issues of many requests with clients which needed more specification on their output requests.Sometime users can make multiple request to the same API and still not receive all the data so the end up making more and more requests which turn up increasing the system latency and saturating the **APIs endpoints** so GRAPHQL solve this issue.We can Clearlt see that in the images below.
+
+![GRAPHQL_Illustration](pictures/GRAPHQL_Illustration.png)
+
+So with GRAPHQL facebook energineer simply modified the form of the request while also changing the format from multiple endpoints to a single one.That is searching an exact book inside a library.
+**So with GRAPHQL** we mainly change the schema our request and the mainly look like json objects which was mainly the format of the response in Restful APIs.The methods are in the image below.
+
+
+![GRAPHQL_Schema_Design](pictures/GRAPHQL_Schema_Design.png)
+
+
+
+**Note: With GRAPHQL we need to return error skills in the query in order for it to return and error if it encountes one**
+
+
+![GRAPHQL_Error_Design](pictures/GRAPHQL_Error_Design.png)
+
+
+
+# Authentication
+
+**Authentication is the system that permit to know if a user is been able to access a particular service he claims to it** Thats is the aim used if Auth Servers in our applications.Most developpements mix up Authentication with Authorization also very confuse we JWT and OAUth2 which is an Authentication Framework while JWT and Bearer Auth are Authentication methods.
+
+Let start up with an illustrative message that defines authentication.
+
 
 
