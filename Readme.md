@@ -251,7 +251,6 @@ All this proctols are good but need to be handle from one source to another so t
 
 **UDP(User Datagram Protocol)** Which is the second type of protocol been used here it is very fast but is also not guarented so it does not garanty that the packets will be transfer from the source to the destination like TCP does and i also has less Overhead.The is also no handshake with UDP.UDP can be consider as the gold tool protocol for Real-time connections like **Video Calls**
 
-
 This is the illustration
 ![TCP&UCP](pictures/TCP&UDP.png)
 
@@ -261,17 +260,13 @@ The next images will give us the clear between differcent TCP and UDP and we can
 
 From this we can clearly see that is the use of TCP can is for slower but more secure services like **Banks,Emails and Paiement Systems** while UDP is mainly used Systems like Video gamings,calls and streaming.
 
-
-
 # RESTful APIs
+
 ![RESTful_API_designed](pictures/RESTful_API_designed.png)
 
 Restful APIs are the more useful formed of API used in developpement today be dev and we gonna explained more on how the are been built.Here i'm mainly talking about this APIs architecture,how it used for error handling,it status code gestion and even it resources modeling.
 
 Let start by seeing the login behind the resource modeling in Resful APIs mainly with the simple business domain which functions with a **Product,Order and Review**.This simple Business Domain is been Transform into a fully Functional RestAPI as can we see on the image below :
-
-
-
 
 ![Resources_modeling](pictures/Resources_modeling.png)
 
@@ -281,24 +276,20 @@ That is the main reason we add filtering,sorting and pagination into our real wo
 For Filtering we can refers to the following image when by a user deside to filter and Item by category.So looiking for a Book in stock.
 ![Filtering_APIs](pictures/Filtering_APIs.png)
 
-
 All this methods follows the same pattern let it be sorting,pagination and filtering the are all company by a query parameters as we are seeing on the differcent images  and this query paramter always has a **?+method**
 
 ![Soring_APIs](pictures/Sorting_APIs.png)
-
-
 
 Let consider i want a item let say bag with a price of 1000 so we gonna used sorting to search of that item base on it known price.**Note the sorting functionality is been set up to the backend and not the front since it is a request which aim is to return an a price so can have many items with that price.**
 
 **Pagination** is been used to handle page changes on our site or app it still used a query paramter.Paginatiion is been set up of with a limit to not display all the informations directly to the Frontend like moving only from page 1 to 3 and then from page 3 to 5 but not from 1 directly to 20 using paginations.In some cases pagination is not used as main attribute and replace by **Offset**
 
-
 ![Paginations](pictures/Paginations.png)
-
 
 Filtering,Sorting and pagination comes with  some benefits like performance increase,Bandwidth save, and Also gives more flexibity to the frontend.
 
 Now let move on to the used of HTTP protocols,Previously we have seen that this methods mainly relies like **GET,POST,PATCH,DELETE** and more this can be seen in the image below.This methods are mainly sued for Crud opretions.As a dev theused  and role of each of this methods should be sure a simple think or aspect we need to know like :
+
 1. GET(Used to fecth data)
 2. POST(Used to create Data)
 3. PUT(Used to replcae Data)
@@ -311,15 +302,12 @@ The next image will clearly explained the used of Status code when using RestAPI
 
 Generally i have the most common errors like the **404(Not Found) and the 500 Internal Server ERROR which generally comes from the DB in Prods**.They are more request errors we gonna see and explain with this screenshot 
 
-
 ![Status_Code](pictures/Status_Code.png)
-
 
 As can see the 300 series are mainly Redirections while the **400 Serries are mainly Client Errors**
 
-
-
 When Using Restful APIs the some best practices a users needs to respect to build a good APIs for everything one to understand.
+
 1. The used of Plusral nouns for api route naming
 2. APIS versoning 
 3. Ensure our APIS Support pagination,Filtering and Sorting 
@@ -327,10 +315,7 @@ When Using Restful APIs the some best practices a users needs to respect to buil
 
 ![RESTful_APIs_Good_Practices](pictures/Restful_API_Good_Pratices.png)
 
-
-
 From the above images we can clearly see how a good restful API should be designed or made up.
-
 
 # GRAPHQL
 
@@ -341,23 +326,48 @@ Traditional RestfulAPIs either return too low or too much about of data when we 
 So with GRAPHQL facebook energineer simply modified the form of the request while also changing the format from multiple endpoints to a single one.That is searching an exact book inside a library.
 **So with GRAPHQL** we mainly change the schema our request and the mainly look like json objects which was mainly the format of the response in Restful APIs.The methods are in the image below.
 
-
 ![GRAPHQL_Schema_Design](pictures/GRAPHQL_Schema_Design.png)
-
-
 
 **Note: With GRAPHQL we need to return error skills in the query in order for it to return and error if it encountes one**
 
-
 ![GRAPHQL_Error_Design](pictures/GRAPHQL_Error_Design.png)
-
-
 
 # Authentication
 
 **Authentication is the system that permit to know if a user is been able to access a particular service he claims to it** Thats is the aim used if Auth Servers in our applications.Most developpements mix up Authentication with Authorization also very confuse we JWT and OAUth2 which is an Authentication Framework while JWT and Bearer Auth are Authentication methods.
 
 Let start up with an illustrative message that defines authentication.
+
+![Auth_Meaning](pictures/Auth_Meaning.png)
+
+
+
+From the image we can clearly see that when a user login  the auth server ask him who is he and to what try of services he can access. If we faces a valid user then he is granted access to the system ou our app else the user is been rejected and send back to an error code **401 UnAuthentized** 
+We have many types of authentication systems that we gonna view in this course directly from the following image below.
+
+
+![All_Auth_Methods](pictures/All_Auth_Methods.png)
+
+
+From the images we can see some caterogories of Authtications methods that is :** 
+1. **Basic Auth Systems**
+2. **Token Base-Auth Systems**
+3. **OAuth2 and OIDC**
+4. **SSO & Identity Protocol**
+
+Let start with the Basic Auth_Systems 
+- **Basic Auth Flow**: This method is quite simple an easy but it only secure with https  and it also easily reversible.
+- **Digest Auth Flow**: This methods works similar to the other Basic Auth System but uses **MD5** hashing system in other to hash the server response.This is better and more secure than the basic auth but it seen none to secure and mainly **Outdated today in prod**
+- **APIkey Auth Flow**: This is when we generate a unique key for each client and then the send that key during each request to be granted acces to the services.This API keys are been stored into database into hashed form so the users can get the same keys for each connection since these keys already exist in database.If the API key is been missing we just returns a Bad Request.**This is the same system AI teach companies uses with our APIs keys and if that key leaks youwill expose to hackers.**
+- **Session Base Auth** :Let you an image to describe the whole process.
+
+
+
+
+![Sessions_Auth](pictures/Sessions_Auth.png)
+
+
+**2. Token Base Auth Systems**
 
 
 
